@@ -1,5 +1,5 @@
 // data.js
-
+import weather from '../assets/images/weather.png'
 export const navbarData = {
     brand: {
         name: "Abhishek",
@@ -79,12 +79,15 @@ export const skillsData = [
 
 export const projectsData = [
     {
+        image:weather,
         title: "Weather App",
         description:
             "Developed a responsive weather application using React, MUI (Material-UI), and react-hot-toast, featuring real-time weather information retrieval.",
         liveLink: "https://weatherbyaps.netlify.app/",
     },
     {
+        image:weather,
+
         title: "My Blog’s",
         description:
             "Developed a responsive blog application with features such as user authentication, post creation, and dynamic content rendering using React JS and Tailwind CSS.",

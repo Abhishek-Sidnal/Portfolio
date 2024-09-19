@@ -19,16 +19,18 @@ export default {
         'dark-text-secondary': '#C9D6E3', // Muted secondary text color
         'dark-footer': '#03346E',       // Footer background color
 
-        // Light mode colors
-        'light-bg': '#f9f9f9',          // Light background
-        'light-card': '#ffffff',        // Light card background
-        'light-accent': '#ff8c00',      // Accent color for light mode
-        'light-primary': '#333333',     // Dark text in light mode
-        'light-text': '#333333',        // Primary text color for light mode
-        'light-secondary': '#555555',   // Muted secondary text color for light mode
+        // Professional Light Mode Colors
+        'light-bg': '#F0F4F8',          // Light grayish-blue background
+        'light-card': '#FFFFFF',        // White card background
+        'light-accent': '#FF6F61',      // Accent color (soft coral)
+        'light-primary': '#333E50',     // Dark text in light mode
+        'light-text': '#2E2E2E',        // Primary text color (dark gray)
+        'light-secondary': '#5A6978',   // Muted secondary text color (grayish blue)
+        'light-border': '#E0E0E0',      // Light border color for components
+        'light-footer': '#333E50',      // Dark footer background color
       },
       backgroundImage: {
-        // Gradients for backgrounds
+
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
         'gradient-dark': 'linear-gradient(135deg, #03346E 0%, #021526 100%)', // Dark gradient
@@ -36,8 +38,8 @@ export default {
         'gradient-hero': 'linear-gradient(180deg, rgba(2, 21, 38, 0.9) 0%, rgba(2, 21, 38, 0.6) 100%)', // Hero section background gradient
 
         // Light mode gradients
-        'gradient-light': 'linear-gradient(135deg, #f9f9f9 0%, #ffffff 100%)', // Light gradient
-        'gradient-light-accent': 'linear-gradient(135deg, #ff8c00 0%, #ffb700 100%)', // Accent gradient for light mode
+        'gradient-light': 'linear-gradient(135deg, #F0F4F8 0%, #FFFFFF 100%)', // Light gradient
+        'gradient-light-accent': 'linear-gradient(135deg, #FF6F61 0%, #FFA177 100%)', // Accent gradient for light mode
       },
       boxShadow: {
         'dark-lg': '0 10px 15px -3px rgba(0, 18, 38, 0.7)', // Soft shadow for dark mode elements
