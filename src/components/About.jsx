@@ -77,12 +77,12 @@ const About = () => {
               return (
                 <div
                   key={index}
-                  className="relative group bg-light-card dark:bg-dark-card text-black dark:text-white p-4 rounded-lg shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 flex flex-col items-center"
+                  className="relative group bg-light-card dark:bg-dark-card text-black dark:text-white p-2 sm:p-4 rounded-lg shadow-md  "
                 >
                   {/* Skill Icon */}
-                  <IconComponent className="text-5xl text-dark-accent dark:text-white transition-colors duration-300" />
+                  <IconComponent className="text-5xl text-black dark:text-white hover:text-dark-accent dark:hover:text-purple-400 transition duration-300" />
                   {/* Tooltip */}
-                  <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full opacity-0 group-hover:opacity-100 bg-black text-white text-xs rounded-lg px-2 py-1 mt-2 transition-opacity duration-300 z-10">
+                  <span className="absolute -bottom-2 z-10 left-1/2 transform -translate-x-1/2 translate-y-full mt-2 opacity-0 group-hover:opacity-100 bg-black text-white text-xs rounded-lg px-2 py-1 transition-opacity duration-300">
                     {skill.name}
                   </span>
                 </div>
