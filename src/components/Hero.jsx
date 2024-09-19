@@ -1,6 +1,7 @@
 import React from "react";
 import dev from "../assets/images/profile_img-isMTF2gD.svg";
-import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaGithubSquare, FaInstagramSquare , FaLinkedin } from "react-icons/fa";
+import { FaSquareXTwitter } from "react-icons/fa6";
 
 
 const Hero = () => {
@@ -43,25 +44,39 @@ const Hero = () => {
       {/* Social Media Icons */}
       <div className="mt-8 flex gap-6 text-3xl">
         <a
-          href="https://github.com"
+          href="https://github.com/Abhishek-Sidnal"
           className="text-black dark:text-white hover:text-dark-accent dark:hover:text-purple-400 transition-colors duration-300"
           aria-label="GitHub"
+          target="_blank"
+
         >
-          <FaGithub />
+          <FaGithubSquare />
         </a>
         <a
-          href="https://linkedin.com"
+          href="https://www.linkedin.com/in/abhishek-sidnal/"
           className="text-black dark:text-white hover:text-dark-accent dark:hover:text-purple-400 transition-colors duration-300"
           aria-label="LinkedIn"
+          target="_blank"
+
         >
           <FaLinkedin />
         </a>
         <a
-          href="https://instagram.com"
+          href="https://www.instagram.com/apsidnal/"
           className="text-black dark:text-white hover:text-dark-accent dark:hover:text-purple-400 transition-colors duration-300"
           aria-label="Instagram"
+          target="_blank"
+
         >
-          <FaInstagram />
+          <FaInstagramSquare  />
+        </a>
+        <a
+          href="https://x.com/apsidnal"
+          className="text-black dark:text-white hover:text-dark-accent dark:hover:text-purple-400 transition-colors duration-300"
+          aria-label="Instagram"
+          target="_blank"
+        >
+          <FaSquareXTwitter />
         </a>
       </div>
     </section>
