@@ -23,7 +23,7 @@ const Hero = () => {
       {/* Hero Title and Subheading */}
       <div className="sm:text-center">
         {/* Gradient Text for the Hero Title */}
-        <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold">
           Abhishek |
           <span className="block sm:inline whitespace-nowrap text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-red-500">
             {" "}
