@@ -7,12 +7,12 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="bg-light-bg dark:bg-gradient-hero text-black dark:text-white min-h-screen flex flex-col justify-center items-center p-3 md:p-10 "
+      className="bg-light-bg dark:bg-gradient-dark text-black dark:text-white min-h-screen flex flex-col justify-center items-center p-3 md:p-10 "
     >
       {/* Profile Image */}
 
       
-      <div className="rounded-full h-72 w-72 drop-shadow-2xl overflow-hidden relative mb-8">
+      <div className="rounded-full h-64 w-64 drop-shadow-2xl overflow-hidden relative mb-8">
         <img
           src={dev}
           alt="developer"

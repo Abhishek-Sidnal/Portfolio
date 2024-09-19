@@ -4,7 +4,7 @@ import Navbar from "./components/Navbar";
 
 function App() {
   return (
-    <div className="min-h-screen bg-light-bg dark:bg-dark-bg text-light-text dark:text-dark-text">
+    <div className="min-h-screen bg-light-bg dark:bg-gradient-dark-accent text-light-text dark:text-dark-text">
       <Navbar />
       <Hero />
       <About />

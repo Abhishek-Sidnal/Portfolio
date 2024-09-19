@@ -10,7 +10,7 @@ import poo from "../assets/images/pngwing.com.png";
 
 const About = () => {
   return (
-    <section className="bg-light-bg dark:bg-gradient-hero text-black dark:text-white min-h-screen flex flex-col justify-center items-center p-6 md:p-10">
+    <section className="bg-light-bg dark:bg-gradient-dark text-black dark:text-white min-h-screen flex flex-col justify-center items-center p-6 md:p-10">
       {/* About Me Section */}
       <div className="max-w-4xl mx-auto text-center mb-10">
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-heading font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-red-500">
@@ -68,7 +68,7 @@ const About = () => {
             <img
               src={poo}
               alt="Skills"
-              className=" m-auto ml-4  filter drop-shadow-custom-dark transition-transform duration-300 hover:scale-105"
+              className="m-auto ml-4 filter drop-shadow-custom-light dark:drop-shadow-custom-dark transition-transform duration-300 hover:scale-105"
             />
           </div>
           <div className="w-full sm:w-2/3 flex flex-wrap justify-center gap-6">
