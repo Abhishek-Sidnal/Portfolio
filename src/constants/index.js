@@ -21,7 +21,7 @@ export const aboutData = {
     name: "Abhishek Sidnal",
     title: "MERN-Stack Developer",
     summary:
-        "I am Abhishek Sidnal, a motivated and skilled Front-End Developer with experience in creating and validating web components, developing responsive web pages, and collaborating with teams using HTML, CSS, Bootstrap, and React JS. I am eager to contribute to innovative and user-centric web solutions.",
+        "I am Abhishek Sidnal, a motivated and skilled MERN Stack Developer with experience in creating dynamic and responsive web applications. With proficiency in React, Node.js, MongoDB, Express, and modern front-end technologies like HTML, CSS, Bootstrap, and Tailwind, I am passionate about building efficient, scalable, and user-centric solutions. I enjoy collaborating with teams to develop innovative applications and am always eager to contribute to impactful projects.",
 };
 
 export const experienceData = [
@@ -41,7 +41,7 @@ export const educationData = [
     {
         degree: "Master of Computer Applications",
         institution: "Jain University, Bangalore",
-        duration: "2023 - 2025",
+        duration: "2023 - Present",
         description:
             "Pursuing a specialization in Full Stack Development, focusing on building scalable web applications using modern technologies like React, Node.js, and databases.",
     },
@@ -62,31 +62,31 @@ import { SiJavascript, SiTailwindcss, SiMongodb, SiGit, SiExpress } from "react-
 
 // Updated with Express
 export const skillsData = [
-  { name: "HTML", icon: FaHtml5 },
-  { name: "CSS", icon: FaCss3Alt },
-  { name: "Bootstrap", icon: FaBootstrap },
-  { name: "Tailwind", icon: SiTailwindcss },
-  { name: "JavaScript", icon: SiJavascript },
-  { name: "React", icon: FaReact },
-  { name: "Node.js", icon: FaNodeJs },
-  { name: "Express", icon: SiExpress },  // Added Express with FaNodeJs as its icon
-  { name: "MongoDB", icon: SiMongodb },
-  { name: "Java", icon: FaJava },
-  { name: "Git", icon: SiGit },
-  { name: "GitHub", icon: FaGithub },
+    { name: "HTML", icon: FaHtml5 },
+    { name: "CSS", icon: FaCss3Alt },
+    { name: "Bootstrap", icon: FaBootstrap },
+    { name: "Tailwind", icon: SiTailwindcss },
+    { name: "JavaScript", icon: SiJavascript },
+    { name: "React", icon: FaReact },
+    { name: "Node.js", icon: FaNodeJs },
+    { name: "Express", icon: SiExpress },  // Added Express with FaNodeJs as its icon
+    { name: "MongoDB", icon: SiMongodb },
+    { name: "Java", icon: FaJava },
+    { name: "Git", icon: SiGit },
+    { name: "GitHub", icon: FaGithub },
 ];
 
 
 export const projectsData = [
     {
-        image:weather,
+        image: weather,
         title: "Weather App",
         description:
             "Developed a responsive weather application using React, MUI (Material-UI), and react-hot-toast, featuring real-time weather information retrieval.",
         liveLink: "https://weatherbyaps.netlify.app/",
     },
     {
-        image:weather,
+        image: weather,
 
         title: "My Blog’s",
         description:

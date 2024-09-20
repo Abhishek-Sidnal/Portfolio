@@ -44,10 +44,12 @@ export default {
       boxShadow: {
         'dark-lg': '0 10px 15px -3px rgba(0, 18, 38, 0.7)', // Soft shadow for dark mode elements
         'light-lg': '0 10px 15px -3px rgba(0, 0, 0, 0.1)',  // Lighter shadow for light mode
+         'custom-light': '7px 7px 13px #cacaca, -7px -7px 13px #f6f6f6',
+        'custom-dark': '7px 7px 13px rgba(200, 200, 200, 0.3), -7px -7px 13px rgba(31, 41, 55, 0.8)'
       },
       dropShadow: {
-        'custom-dark': '0 1px 20px rgba(0, 0, 240, 0.95)',  // Custom dark drop shadow
-        'custom-light': '0 1px 20px rgba(10, 10, 10, 0.95)', // Custom light drop shadow
+        'custom-dark': '5px 5px 0px #d9d9d9, -5px -5px 0px #e7e7e7',  // Custom dark drop shadow
+        'custom-light': '5px 5px 0px rgba(200, 200, 200, 0.3), -5px -5px 0px rgba(31, 41, 55, 0.8)', // Custom light drop shadow
       },
       spacing: {
         '128': '32rem', // Custom spacing for larger components
