@@ -40,16 +40,18 @@ export default {
         // Light mode gradients
         'gradient-light': 'linear-gradient(135deg, #F0F4F8 0%, #FFFFFF 100%)', // Light gradient
         'gradient-light-accent': 'linear-gradient(135deg, #FF6F61 0%, #FFA177 100%)', // Accent gradient for light mode
+
+        'gradient-light-icon':'linear-gradient(145deg, #032f63, #033876)'
       },
       boxShadow: {
         'dark-lg': '0 10px 15px -3px rgba(0, 18, 38, 0.7)', // Soft shadow for dark mode elements
         'light-lg': '0 10px 15px -3px rgba(0, 0, 0, 0.1)',  // Lighter shadow for light mode
-         'custom-light': '7px 7px 13px #cacaca, -7px -7px 13px #f6f6f6',
-        'custom-dark': '7px 7px 13px rgba(200, 200, 200, 0.3), -7px -7px 13px rgba(31, 41, 55, 0.8)'
+       'custom-dark': ' inset 9px 9px 18px #01152c,inset -9px -9px 18px #0553b0',  // Custom dark drop shadow
+        'custom-light': 'inset 9px 9px 18px #bfbfbf,inset -9px -9px 18px #ffffff', 
       },
       dropShadow: {
-        'custom-dark': '5px 5px 0px #d9d9d9, -5px -5px 0px #e7e7e7',  // Custom dark drop shadow
-        'custom-light': '5px 5px 0px rgba(200, 200, 200, 0.3), -5px -5px 0px rgba(31, 41, 55, 0.8)', // Custom light drop shadow
+        'custom-dark': '0px 4px 12px  #d9d9d9',  // Custom dark drop shadow
+        'custom-light': '0px 4px 12px rgb(0, 0, 0)' // Custom light drop shadow
       },
       spacing: {
         '128': '32rem', // Custom spacing for larger components

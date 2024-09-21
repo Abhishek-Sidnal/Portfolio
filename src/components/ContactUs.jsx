@@ -66,52 +66,37 @@ const ContactUs = () => {
   };
 
   return (
-    <section className="min-h-screen py-12 bg-light-bg dark:bg-dark-bg transition duration-300 ease-in-out">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl font-bold text-center text-light-primary dark:text-dark-text mb-12">
-          Get in touch
+    <section className="bg-light-bg dark:bg-dark-bg transition-colors duration-300 py-16">
+      <div className="max-w-7xl mx-auto px-4">
+        <h2 className="text-center text-3xl font-bold text-light-primary dark:text-dark-text mb-8">
+          Get in Touch
         </h2>
-        <div className="flex flex-col md:flex-row justify-between items-start space-y-8 md:space-y-0 md:space-x-8">
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* Contact Information Section */}
-          <div className="flex-1 text-center md:text-left space-y-4">
-            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-orange-400 dark:from-purple-400 dark:to-pink-600">
-              Let's talk
-            </h3>
-            <p className="text-light-secondary dark:text-dark-text-secondary">
-              I'm actively seeking new job opportunities and available for
-              freelance projects. Feel free to reach out if you have any
-              positions or projects you'd like to discuss. I'm open to
-              connecting anytime!
+          <div className="text-light-primary dark:text-dark-text">
+            <h3 className="text-2xl font-semibold mb-4">Let's Talk</h3>
+            <p className="text-light-secondary dark:text-dark-text-secondary mb-6">
+              I'm actively seeking new job opportunities and available for freelance projects. Feel free to reach out if you have any positions or projects you'd like to discuss.
             </p>
-            <div className="space-y-4">
-              <p className="flex items-center justify-center md:justify-start space-x-3">
-                <span className="material-icons text-light-accent dark:text-dark-accent">
-                  email
-                </span>
-                <span className="text-light-secondary dark:text-dark-text-secondary">
-                  sidnalap051@gmail.com
-                </span>
-              </p>
-              <p className="flex items-center justify-center md:justify-start space-x-3">
-                <span className="material-icons text-light-accent dark:text-dark-accent">
-                  location
-                </span>
-                <span className="text-light-secondary dark:text-dark-text-secondary">
-                  Bangalore, Karnataka, India.
-                </span>
-              </p>
-            </div>
+            <p className="mb-2">
+              <span className="font-bold">Email: </span>
+              sidnalap051@gmail.com
+            </p>
+            <p>
+              <span className="font-bold">Location: </span>
+              Bangalore, Karnataka, India
+            </p>
           </div>
 
-          {/* Form or Animation Section */}
-          <div className="flex-1 w-full relative flex justify-center items-center bg-light-card dark:bg-dark-card sm:p-8 p-4 rounded-lg shadow-lg dark:shadow-dark-lg transition duration-300 ease-in-out">
-            {/* Show form if not loading or submitted */}
+          {/* Form Section */}
+          <div>
             {!loading && !submitted && (
-              <form onSubmit={handleSubmit} className="w-full sm:space-y-6 space-y-3">
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label
                     htmlFor="name"
-                    className="block text-sm font-medium text-light-secondary dark:text-dark-text-secondary"
+                    className="block text-light-primary dark:text-dark-text font-medium"
                   >
                     Your Name
                   </label>
@@ -121,17 +106,16 @@ const ContactUs = () => {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    className="mt-1 block w-full p-3 border border-light-border dark:border-dark-border bg-transparent rounded-md text-light-primary dark:text-dark-text focus:outline-none focus:ring-2 focus:ring-light-accent dark:focus:ring-dark-accent transition duration-300"
                     placeholder="Enter your name"
+                    className="w-full mt-2 p-3 border dark:border-dark-border rounded-lg bg-light-bg dark:bg-dark-bg text-light-primary dark:text-dark-text focus:ring-light-accent dark:focus:ring-dark-accent"
                   />
-                  {errors.name && (
-                    <p className="mt-2 text-sm text-red-500">{errors.name}</p>
-                  )}
+                  {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
                 </div>
+
                 <div>
                   <label
                     htmlFor="email"
-                    className="block text-sm font-medium text-light-secondary dark:text-dark-text-secondary"
+                    className="block text-light-primary dark:text-dark-text font-medium"
                   >
                     Your Email
                   </label>
@@ -141,19 +125,18 @@ const ContactUs = () => {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className="mt-1 block w-full p-3 border border-light-border dark:border-dark-border bg-transparent rounded-md text-light-primary dark:text-dark-text focus:outline-none focus:ring-2 focus:ring-light-accent dark:focus:ring-dark-accent transition duration-300"
                     placeholder="Enter your email"
+                    className="w-full mt-2 p-3 border dark:border-dark-border rounded-lg bg-light-bg dark:bg-dark-bg text-light-primary dark:text-dark-text focus:ring-light-accent dark:focus:ring-dark-accent"
                   />
-                  {errors.email && (
-                    <p className="mt-2 text-sm text-red-500">{errors.email}</p>
-                  )}
+                  {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
                 </div>
+
                 <div>
                   <label
                     htmlFor="message"
-                    className="block text-sm font-medium text-light-secondary dark:text-dark-text-secondary"
+                    className="block text-light-primary dark:text-dark-text font-medium"
                   >
-                    Write your message here
+                    Your Message
                   </label>
                   <textarea
                     id="message"
@@ -161,18 +144,15 @@ const ContactUs = () => {
                     rows="4"
                     value={formData.message}
                     onChange={handleChange}
-                    className="mt-1 block w-full p-3 border border-light-border dark:border-dark-border bg-transparent rounded-md text-light-primary dark:text-dark-text focus:outline-none focus:ring-2 focus:ring-light-accent dark:focus:ring-dark-accent transition duration-300"
                     placeholder="Enter your message"
+                    className="w-full mt-2 p-3 border dark:border-dark-border rounded-lg bg-light-bg dark:bg-dark-bg text-light-primary dark:text-dark-text focus:ring-light-accent dark:focus:ring-dark-accent"
                   ></textarea>
-                  {errors.message && (
-                    <p className="mt-2 text-sm text-red-500">
-                      {errors.message}
-                    </p>
-                  )}
+                  {errors.message && <p className="text-red-500 text-sm mt-1">{errors.message}</p>}
                 </div>
+
                 <button
                   type="submit"
-                  className="w-full bg-light-accent hover:bg-light-primary dark:bg-dark-accent dark:hover:bg-dark-primary text-light-card dark:text-dark-card font-semibold py-3 rounded-md shadow-md transition-colors duration-300"
+                  className="w-full py-3 px-6 bg-light-accent dark:bg-dark-accent text-white font-semibold rounded-lg hover:bg-light-primary dark:hover:bg-dark-primary focus:ring-4 focus:ring-light-accent dark:focus:ring-dark-accent"
                 >
                   Send Message
                 </button>
@@ -181,9 +161,9 @@ const ContactUs = () => {
 
             {/* Loading Animation */}
             {loading && (
-              <div className="flex flex-col items-center justify-center animate-fadeIn">
-                <AiOutlineLoading3Quarters className="animate-spin text-5xl text-light-primary dark:text-dark-accent" />
-                <p className="mt-4 text-lg text-light-secondary dark:text-dark-text-secondary">
+              <div className="flex flex-col items-center space-y-3">
+                <AiOutlineLoading3Quarters className="animate-spin text-light-accent dark:text-dark-accent" size={40} />
+                <p className="text-light-primary dark:text-dark-text">
                   Sending message, please wait...
                 </p>
               </div>
@@ -191,9 +171,9 @@ const ContactUs = () => {
 
             {/* Success Message */}
             {submitted && !loading && (
-              <div className="flex flex-col items-center justify-center animate-fadeIn">
-                <AiOutlineCheckCircle className="text-green-500 text-6xl" />
-                <p className="mt-4 text-lg text-green-500 font-medium">
+              <div className="flex flex-col items-center space-y-3">
+                <AiOutlineCheckCircle className="text-light-accent dark:text-dark-accent" size={40} />
+                <p className="text-light-primary dark:text-dark-text">
                   Thank you! Your message has been sent.
                 </p>
               </div>
