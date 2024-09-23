@@ -14,6 +14,8 @@ import {
   useVideoTexture,
 } from "@react-three/drei";
 import * as THREE from "three";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
 const Computer = ({ texture, screenImage, ...props }) => {
   const group = useRef();
@@ -32,13 +34,19 @@ const Computer = ({ texture, screenImage, ...props }) => {
 
   useEffect(() => {
     if (videoTexture) {
-      videoTexture.flipY = false; // Fix texture orientation for Three.js
+      videoTexture.flipY = false; 
     }
   }, [videoTexture]);
 
-  // const screenTexture = useTexture(
-  //   screenImage || "src/assets/images/weather.png"
-  // );
+  useGSAP(() => {
+    gsap.from(group.current.rotation, {
+      y: Math.PI / 2,
+      duration: 1,
+      ease: 'power3.out',
+    });
+  }, [videoTexture]);
+
+ 
   videoTexture.wrapS = videoTexture.wrapT = THREE.RepeatWrapping; // Allows repeating
   videoTexture.offset.set(-0.9, -10); // Change these values to move the texture (0, 0) is default position
   videoTexture.center.set(0, 0);
