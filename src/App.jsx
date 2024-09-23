@@ -21,7 +21,7 @@ function App() {
         <Experience />
         <Education />
         <ContactUs />
-        <Footer/>
+        <Footer />
       </ThemeProvider>
     </div>
   );

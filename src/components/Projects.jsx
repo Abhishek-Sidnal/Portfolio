@@ -1,25 +1,17 @@
-import React, {
-  useState,
-  useEffect,
-  useRef,
-  useContext,
-  Suspense,
-} from "react";
+import React, { useState, useEffect, useRef, Suspense } from "react";
 import { FaArrowRight, FaArrowLeft, FaExternalLinkAlt } from "react-icons/fa";
 import { gsap } from "gsap";
 import { projectsData, skillsData } from "../constants/index";
 import SkillIcon from "./SkillIcon";
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Environment } from "@react-three/drei";
-import Computer from "./Computer";
-import { ThemeContext } from "../contexts/ThemeContext";
+import { Environment } from "@react-three/drei";
 import CanvasLoader from "./CanvasLoader";
+import Laptop from "./Laptop";
 
 const Projects = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isExpanded, setIsExpanded] = useState(false);
   const skillsRef = useRef(null);
-  const { isDarkMode } = useContext(ThemeContext);
 
   const handleNavigation = (direction) => {
     setCurrentIndex((prevIndex) =>
@@ -85,7 +77,10 @@ const Projects = () => {
   };
 
   return (
-    <div id="projects" className="w-full mx-auto mt-16 p-5 md:p-10 shadow-light-lg dark:shadow-dark-lg">
+    <div
+      id="projects"
+      className="w-full mx-auto mt-16 p-5 md:p-10 shadow-light-lg dark:shadow-dark-lg"
+    >
       <h2 className="text-3xl sm:text-4xl font-heading font-semibold mb-12 text-center text-dark-primary dark:text-dark-text">
         My Projects
       </h2>
@@ -94,7 +89,7 @@ const Projects = () => {
         {/* Project details */}
         <div className="flex-1 flex flex-col gap-3 lg:gap-3 w-full md:w-1/2 p-3 lg:p-6 text-light-primary dark:text-dark-text">
           <div className="flex items-center gap-4">
-            <div className="p-2 backdrop-blur-md w-fit rounded-lg bg-gradient-dark-accent shadow-custom-dark">
+            <div className="p-2 backdrop-blur-md w-fit rounded-lg bg-gradient-dark-accent dark:bg-gradient-light-accent shadow-custom-light dark:shadow-custom-dark">
               <img
                 className="w-8 h-8 shadow-md rounded-full"
                 src={currentProject.image}
@@ -162,11 +157,15 @@ const Projects = () => {
         </div>
 
         {/* 3D Model */}
-        <div className="w-full h-full sm:h-80 md:h-96 p-5 md:w-1/2 flex items-center justify-center lg:justify-end">
+        <div className="w-full md:h-128 h-64  p-5 md:w-1/2 flex items-center justify-center lg:justify-end">
           <Canvas shadows camera={{ position: [0, 1.5, 2.5], fov: 50 }}>
-            <ambientLight intensity={isDarkMode ? 3 : -2} />
-            <directionalLight position={[10, 10, 5]} castShadow intensity={1} />
-            <pointLight position={[-5, 5, 5]} intensity={0.5} />
+            <ambientLight intensity={0} />
+            <directionalLight
+              position={[10, 10, 10]}
+              castShadow
+              intensity={-6}
+            />
+            <pointLight position={[10, 20, 0]} intensity={-10} />
             <spotLight
               position={[0, 5, 0]}
               angle={0.3}
@@ -176,19 +175,18 @@ const Projects = () => {
             />
 
             <Suspense fallback={<CanvasLoader />}>
-              <Computer
-                scale={3.5}
+              <Laptop
+                // scale={12}
+                scale={12}
                 screenImage={currentProject.image}
-                position={[0, 0.5, 0.6]}
-                rotation={[-0.5, 0.02, 0]}
+                // position={[0, -1.0, -0.3]}
+                position={[0, -1.8, -0.8]}
+                // rotation={[-0.63, 0.0, 0]}
+                rotation={[-0.66, 0.0, 0]}
                 texture={currentProject.video}
               />
             </Suspense>
-            <OrbitControls
-              enableZoom={false}
-              maxPolarAngle={Math.PI / 3}
-              enablePan={false}
-            />
+
             <Environment preset="studio" />
           </Canvas>
         </div>

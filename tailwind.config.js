@@ -4,65 +4,61 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
-  darkMode: 'class', // Enable dark mode with 'class' strategy
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
-        // Professional Darkest Bluish Color Palette for Dark Mode
-        'dark-bg': '#021526',           // Very dark blue background
-        'dark-card': '#03346E',         // Dark blue card background
-        'dark-accent': '#6EACDA',       // Accent color (light blue)
-        'dark-primary': '#023B61',      // Primary color (darker blue)
-        'dark-secondary': '#24567B',    // Secondary color (muted dark blue)
-        'dark-border': '#004C8A',       // Border color for components
-        'dark-text': '#E2E2B6',         // Primary text color (light beige)
-        'dark-text-secondary': '#C9D6E3', // Muted secondary text color
-        'dark-footer': '#03346E',       // Footer background color
+        'dark-bg': '#021526',
+        'dark-card': '#03346E',
+        'dark-accent': '#6EACDA',
+        'dark-primary': '#023B61',
+        'dark-secondary': '#24567B',
+        'dark-border': '#004C8A',
+        'dark-text': '#E2E2B6',
+        'dark-text-secondary': '#C9D6E3',
+        'dark-footer': '#03346E',
 
-        // Professional Light Mode Colors
-        'light-bg': '#F0F4F8',          // Light grayish-blue background
-        'light-card': '#FFFFFF',        // White card background
-        'light-accent': '#FF6F61',      // Accent color (soft coral)
-        'light-primary': '#333E50',     // Dark text in light mode
-        'light-text': '#2E2E2E',        // Primary text color (dark gray)
-        'light-secondary': '#5A6978',   // Muted secondary text color (grayish blue)
-        'light-border': '#E0E0E0',      // Light border color for components
-        'light-footer': '#333E50',      // Dark footer background color
+        'light-bg': '#F0F4F8',
+        'light-card': '#FFFFFF',
+        'light-accent': '#FF6F61',
+        'light-primary': '#333E50',
+        'light-text': '#2E2E2E',
+        'light-secondary': '#5A6978',
+        'light-border': '#E0E0E0',
+        'light-footer': '#333E50',
       },
       backgroundImage: {
-
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-        'gradient-dark': 'linear-gradient(135deg, #03346E 0%, #021526 100%)', // Dark gradient
-        'gradient-dark-accent': 'linear-gradient(135deg, #6EACDA 0%, #24567B 100%)', // Accent gradient
-        'gradient-hero': 'linear-gradient(180deg, rgba(2, 21, 38, 0.9) 0%, rgba(2, 21, 38, 0.6) 100%)', // Hero section background gradient
+        'gradient-dark': 'linear-gradient(135deg, #03346E 0%, #021526 100%)',
+        'gradient-dark-accent': 'linear-gradient(135deg, #6EACDA 0%, #24567B 100%)',
+        'gradient-hero': 'linear-gradient(180deg, rgba(2, 21, 38, 0.9) 0%, rgba(2, 21, 38, 0.6) 100%)',
 
-        // Light mode gradients
-        'gradient-light-accent': 'linear-gradient(135deg, #F0F4F8 0%, #FFFFFF 100%)', // Light gradient
-        'gradient-light': 'linear-gradient(135deg, #FF6F61 0%, #FFA177 100%)', // Accent gradient for light mode
+        'gradient-light-accent': 'linear-gradient(135deg, #F0F4F8 0%, #FFFFFF 100%)',
+        'gradient-light': 'linear-gradient(135deg, #FF6F61 0%, #FFA177 100%)',
 
-        'gradient-light-icon':'linear-gradient(145deg, #032f63, #033876)'
+        'gradient-light-icon':'linear-gradient(145deg, #032f63, #033876)',
       },
       boxShadow: {
-        'dark-lg': '0 10px 15px -3px rgba(0, 18, 38, 0.7)', // Soft shadow for dark mode elements
-        'light-lg': '0 10px 15px -3px rgba(0, 0, 0, 0.1)',  // Lighter shadow for light mode
-       'custom-dark': ' inset 9px 9px 18px #01152c,inset -9px -9px 18px #0553b0',  // Custom dark drop shadow
-        'custom-light': 'inset 9px 9px 18px #bfbfbf,inset -9px -9px 18px #ffffff', 
+        'dark-lg': '0 10px 15px -3px rgba(0, 18, 38, 0.7)',
+        'light-lg': '0 0 10px 5px rgba(0, 0, 0, 0.1)',
+        'custom-dark': ' inset 9px 9px 18px #01152c,inset -9px -9px 18px #0553b0',
+        'custom-light': 'inset 9px 9px 18px #bfbfbf,inset -9px -9px 18px #ffffff',
       },
       dropShadow: {
-        'custom-dark': '0px 4px 12px  #d9d9d9',  // Custom dark drop shadow
-        'custom-light': '0px 4px 12px rgb(0, 0, 0)' // Custom light drop shadow
+        'custom-dark': '0px 4px 12px  #d9d9d9',
+        'custom-light': '0px 4px 12px rgb(0, 0, 0)'
       },
       spacing: {
-        '128': '32rem', // Custom spacing for larger components
+        '128': '32rem',
         '144': '36rem',
       },
       borderRadius: {
-        '4xl': '2rem', // Larger border-radius for buttons and containers
+        '4xl': '2rem',
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'], // Custom font-family
-        heading: ['Poppins', 'sans-serif'], // Custom heading font
+        sans: ['Inter', 'sans-serif'],
+        heading: ['Poppins', 'sans-serif'],
       },
     },
   },

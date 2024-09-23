@@ -16,12 +16,12 @@ const Education = () => {
               opacity: 1,
               scale: 1,
               rotation: 0,
-              duration: 0.8, // Reduced duration for better responsiveness
+              duration: 0.8,
               stagger: 0.2,
-              ease: "power1.out", // Changed to a smoother ease
+              ease: "power1.out",
             }
           );
-          observer.unobserve(entry.target); // Unobserve after animation
+          observer.unobserve(entry.target);
         }
       });
     };

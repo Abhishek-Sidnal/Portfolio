@@ -3,7 +3,7 @@ import { gsap } from "gsap";
 import { skillsData } from "../constants/index";
 import poo from "../assets/images/pngwing.com.png";
 import poo2 from "../assets/images/poo2.png";
-import poo3 from "../assets/images/poo3.png"; // Make sure the path is correct
+import poo3 from "../assets/images/poo3.png"; 
 import SkillIcon from "./SkillIcon";
 
 const Skills = () => {

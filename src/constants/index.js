@@ -9,7 +9,7 @@ import project2 from '../assets/textures/project4.mp4'
 export const navbarData = {
     brand: {
         name: "Abhishek",
-        icon: "FaCode", // Using icon name here for flexibility
+        icon: "FaCode", 
     },
     links: [
         { name: "Home", path: "#home" },
@@ -76,7 +76,7 @@ export const skillsData = [
     { name: "JavaScript", icon: SiJavascript },
     { name: "React", icon: FaReact },
     { name: "Node.js", icon: FaNodeJs },
-    { name: "Express", icon: SiExpress },  // Added Express with FaNodeJs as its icon
+    { name: "Express", icon: SiExpress }, 
     { name: "MongoDB", icon: SiMongodb },
     { name: "Java", icon: FaJava },
     { name: "Git", icon: SiGit },

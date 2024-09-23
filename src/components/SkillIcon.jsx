@@ -44,7 +44,7 @@ const SkillIcon = ({ IconComponent, skillName, projects = false }) => {
       className={`skill-box bg-light-card dark:bg-gradient-light-icon text-light-text dark:text-dark-text rounded-lg transition duration-300 text-center ${boxClass}`}
       style={{ zIndex: 1, overflow: "visible" }}
     >
-      <IconComponent className={`${iconSizeClass} text-black dark:text-white hover:text-dark-accent dark:hover:text-purple-400 transition duration-300`} />
+      <IconComponent className={`${iconSizeClass} text-black dark:text-white hover:text-light-accent dark:hover:text-purple-400 transition duration-300`} />
       <p className={`font-semibold ${textSizeClass}`}>{skillName}</p>
     </div>
   );

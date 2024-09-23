@@ -3,13 +3,6 @@
 @tailwind utilities;
 
 
-/* .text12 {
-    background: linear-gradient(to right, #A104FF, #FF6A00);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    color: transparent;
-  } */
 
   html {
     scroll-behavior: smooth;
@@ -80,4 +73,10 @@
 
 .c-border{
   border-radius: 25% 25% 25% 25% / 25% 25% 26% 25% ;
+}
+
+
+/* Tailwind CSS Custom Styles */
+.input-lg {
+  @apply shadow-[0_1px_3px_rgba(0,0,0,0.12),0_1px_2px_rgba(0,0,0,0.24)] dark:shadow-custom-dark;
 }

@@ -6,7 +6,6 @@ const Experience = () => {
   const experienceRef = useRef(null);
 
   useEffect(() => {
-    // Define GSAP animation
     const animateExperience = () => {
       gsap.fromTo(
         experienceRef.current.children,
@@ -14,14 +13,13 @@ const Experience = () => {
         {
           opacity: 1,
           scale: 1,
-          duration: 2, // Reduced duration for smoother animation
+          duration: 2,
           stagger: 0.2,
-          ease: "elastic.out(1, 0.75)", // Optimized easing
+          ease: "elastic.out(1, 0.75)",
         }
       );
     };
 
-    // Intersection Observer callback
     const handleScroll = (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -30,15 +28,12 @@ const Experience = () => {
       });
     };
 
-    // Create Intersection Observer
     const observer = new IntersectionObserver(handleScroll, { threshold: 0.2 });
 
-    // Observe the experience section
     if (experienceRef.current) {
       observer.observe(experienceRef.current);
     }
 
-    // Cleanup observer on unmount
     return () => {
       if (experienceRef.current) {
         observer.unobserve(experienceRef.current);
@@ -73,4 +68,4 @@ const Experience = () => {
   );
 };
 
-export default memo(Experience); // Memoized for performance
+export default memo(Experience);

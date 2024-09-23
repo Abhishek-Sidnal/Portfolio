@@ -2,13 +2,13 @@ import React, { useRef, useContext, useEffect, useState, useMemo } from "react";
 import { FaBars, FaCode, FaTimes } from "react-icons/fa";
 import { BsSun, BsMoon } from "react-icons/bs";
 import { navbarData } from "../constants/index";
-import { ThemeContext } from "../contexts/ThemeContext"; // Import ThemeContext
+import { ThemeContext } from "../contexts/ThemeContext"; 
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const sidebarRef = useRef();
 
-  const { isDarkMode, toggleDarkMode } = useContext(ThemeContext); // Use ThemeContext
+  const { isDarkMode, toggleDarkMode } = useContext(ThemeContext);
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
@@ -30,7 +30,6 @@ const Navbar = () => {
     };
   }, [isOpen]);
 
-  // Memoized navbar links to optimize rendering
   const navbarLinks = useMemo(() => navbarData.links, []);
 
   return (
@@ -38,25 +37,24 @@ const Navbar = () => {
       <div className="flex justify-between items-center py-4 px-4 sm:px-6">
         {/* Brand / Logo */}
         <a href="/" className="flex items-center text-black dark:text-white">
-          <FaCode className="text-3xl text-dark-accent" aria-label="Code Logo" />
+          <FaCode className="text-3xl text-light-accent dark:text-dark-accent" aria-label="Code Logo" />
           <span className="ml-3 text-xl font-heading font-semibold">
             {navbarData.brand.name}
           </span>
         </a>
 
-        {/* Desktop Navigation (visible on large screens) */}
         <nav className="hidden md:flex space-x-6">
           {navbarLinks.map((link, index) => (
             <a
               key={index}
               href={link.path}
-              className="text-lg text-black dark:text-white hover:text-dark-accent transition duration-300"
+              className="text-lg text-black dark:text-white hover:text-light-accent dark:hover:text-dark-accent transition duration-300"
             >
               {link.name}
             </a>
           ))}
           <button
-            onClick={toggleDarkMode} // Use toggleDarkMode from context
+            onClick={toggleDarkMode}
             className="text-black dark:text-white text-2xl focus:outline-none"
             aria-label="Toggle Dark Mode"
           >
@@ -68,10 +66,9 @@ const Navbar = () => {
           </button>
         </nav>
 
-        {/* Dark Mode Toggle and Mobile Menu */}
         <div className="flex items-center space-x-4 md:hidden">
           <button
-            onClick={toggleDarkMode} // Use toggleDarkMode from context
+            onClick={toggleDarkMode} 
             className="text-black dark:text-white text-2xl focus:outline-none"
             aria-label="Toggle Dark Mode"
           >
@@ -82,7 +79,6 @@ const Navbar = () => {
             )}
           </button>
 
-          {/* Mobile Menu Toggle Button */}
           <button
             onClick={toggleMenu}
             className="text-black dark:text-white text-3xl"
@@ -93,7 +89,6 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Navigation Menu (only visible when menu is open) */}
       {isOpen && (
         <div className="fixed inset-0 flex justify-end bg-black bg-opacity-60 z-50">
           <div
@@ -112,7 +107,7 @@ const Navbar = () => {
                 <a
                   key={index}
                   href={link.path}
-                  className="text-lg text-black dark:text-white hover:text-dark-accent transition duration-300"
+                  className="text-lg text-black dark:text-white hover:text-light-accent dark:hover:text-dark-accent transition duration-300"
                   onClick={toggleMenu}
                 >
                   {link.name}
