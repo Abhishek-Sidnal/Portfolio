@@ -14,6 +14,7 @@ const Projects = () => {
   const [isExpanded, setIsExpanded] = useState(false);
   const skillsRef = useRef(null);
   const isTablet = useMediaQuery ({ minWidth: 768, maxWidth: 1024 });
+  const isSmall = useMediaQuery({ maxWidth: 440 });
 
 
   const handleNavigation = (direction) => {
@@ -180,7 +181,7 @@ const Projects = () => {
             <Suspense fallback={<CanvasLoader />}>
               <Laptop
                 // scale={12}
-                scale={isTablet? 18:12}
+                scale={ isSmall? 18 : isTablet ? 14 :12}
                 screenImage={currentProject.image}
                 // position={[0, -1.0, -0.3]}
                 position={ [0, -1.8, -0.8]}
@@ -191,6 +192,7 @@ const Projects = () => {
                 // rotation={[-0.63, 0.0, 0]}
                 rotation={[-0.72, 0.0, 0]}
                 texture={currentProject.video}
+                mobile={isSmall}
               />
             </Suspense>
 
