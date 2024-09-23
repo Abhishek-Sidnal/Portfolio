@@ -7,11 +7,14 @@ import { Canvas } from "@react-three/fiber";
 import { Environment } from "@react-three/drei";
 import CanvasLoader from "./CanvasLoader";
 import Laptop from "./Laptop";
+import { useMediaQuery } from 'react-responsive';
 
 const Projects = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isExpanded, setIsExpanded] = useState(false);
   const skillsRef = useRef(null);
+  const isTablet = useMediaQuery ({ minWidth: 768, maxWidth: 1024 });
+
 
   const handleNavigation = (direction) => {
     setCurrentIndex((prevIndex) =>
@@ -177,12 +180,16 @@ const Projects = () => {
             <Suspense fallback={<CanvasLoader />}>
               <Laptop
                 // scale={12}
-                scale={12}
+                scale={isTablet? 18:12}
                 screenImage={currentProject.image}
                 // position={[0, -1.0, -0.3]}
-                position={[0, -1.8, -0.8]}
+                position={ [0, -1.8, -0.8]}
+
+                // position={ [0, -1.8, -0.8]}
+
+
                 // rotation={[-0.63, 0.0, 0]}
-                rotation={[-0.66, 0.0, 0]}
+                rotation={[-0.72, 0.0, 0]}
                 texture={currentProject.video}
               />
             </Suspense>
