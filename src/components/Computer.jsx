@@ -20,7 +20,7 @@ const Computer = ({ texture, screenImage, ...props }) => {
   const meshRef = useRef();
 
   const { nodes, materials, animations } = useGLTF(
-    "src/assets/models/computer3d.glb"
+    "/assets/models/computer3d.glb"
   );
   const { actions } = useAnimations(animations, group);
 
@@ -3614,4 +3614,4 @@ const Computer = ({ texture, screenImage, ...props }) => {
   );
 };
 export default Computer;
-useGLTF.preload("src/assets/models/computer3d.glb");
+useGLTF.preload("/assets/models/computer3d.glb");
