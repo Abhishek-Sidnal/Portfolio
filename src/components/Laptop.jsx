@@ -15,23 +15,26 @@ const Laptop = (props) => {
   });
 
   useEffect(() => {
-    if (groupRef.current) {
-      gsap.from(groupRef.current.rotation, {
-        y: Math.PI / 2,
-        duration: 1.5,
-        ease: "power3.out",
-      });
-    }
+    // Check if mobile prop is false before applying animations
+    if (!props.mobile) {
+      if (groupRef.current) {
+        gsap.from(groupRef.current.rotation, {
+          y: Math.PI / 2,
+          duration: 1.5,
+          ease: "power3.out",
+        });
+      }
 
-    if (screenRef.current) {
-      gsap.from(screenRef.current.rotation, {
-        x: Math.PI / 2,
-        duration: 1.5,
-        ease: "power3.out",
-        delay: 0.5,
-      });
+      if (screenRef.current) {
+        gsap.from(screenRef.current.rotation, {
+          x: Math.PI / 2,
+          duration: 1.5,
+          ease: "power3.out",
+          delay: 0.5,
+        });
+      }
     }
-  }, [screenTexture]); 
+  }, [screenTexture, props.mobile]); // Added props.mobile as dependency
 
   return (
     <group {...props} dispose={null} ref={groupRef}>
@@ -76,7 +79,11 @@ const Laptop = (props) => {
           material={materials["Material.010"]}
         ></mesh>
       </group>
-      <group position={[0.153, 0.007, -0.082]} rotation={[0.4, 0, 0]} ref={screenRef}>
+      <group
+        position={ props.mobile?[0.153, 0.1, -0.09]:[0.153, 0.007, -0.082]}
+        rotation={props.mobile ? [0.35, 0, 0] : [0.3, 0, 0]}
+        ref={screenRef}
+      >
         <mesh
           castShadow
           receiveShadow
