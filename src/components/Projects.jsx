@@ -180,7 +180,7 @@ const Projects = () => {
             <Suspense fallback={<CanvasLoader />}>
               <Laptop
                 // scale={12}
-                scale={isSmall ? 18 : isTablet ? 14 : 12}
+                scale={isSmall ? 22 : isTablet ? 14 : 12}
                 screenImage={currentProject.image}
                 // position={[0, -1.0, -0.3]}
                 position={

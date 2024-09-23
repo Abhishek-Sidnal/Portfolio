@@ -62,7 +62,7 @@ const About = () => {
         </h2>
         <div className="flex flex-col sm:flex-row items-center justify-center mt-10">
           <div className="w-3/4 sm:w-1/2 ">
-            <div className="p-5 w-fit shadow-light-lg dark:shadow-custom-dark rounded-xl">
+            <div className="p-5 w-full sm:w-fit shadow-light-lg dark:shadow-custom-dark rounded-xl">
               <img
                 src={about}
                 alt="About Me"
