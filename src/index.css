@@ -75,3 +75,9 @@
 .icon-bgc{
   background: linear-gradient(145deg, #032f63, #033876);
 }
+
+
+
+.c-border{
+  border-radius: 25% 25% 25% 25% / 25% 25% 26% 25% ;
+}

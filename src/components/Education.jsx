@@ -11,20 +11,17 @@ const Education = () => {
         if (entry.isIntersecting) {
           gsap.fromTo(
             educationRef.current.children,
-            {
-              opacity: 0,
-              scale: 0.8,
-              rotation: 0,
-            },
+            { opacity: 0, scale: 0.8, rotation: 0 },
             {
               opacity: 1,
               scale: 1,
               rotation: 0,
-              duration: 3,
+              duration: 0.8, // Reduced duration for better responsiveness
               stagger: 0.2,
-              ease: "elastic.out(1, 0.5)",
+              ease: "power1.out", // Changed to a smoother ease
             }
           );
+          observer.unobserve(entry.target); // Unobserve after animation
         }
       });
     };
@@ -45,7 +42,7 @@ const Education = () => {
   }, []);
 
   return (
-    <div className="w-full max-w-5xl mx-auto mb-6 sm:mb-10" ref={educationRef}>
+    <div className="w-full max-w-5xl mx-auto mb-6 sm:mb-10 p-5 md:p-10" ref={educationRef}>
       <h2 className="text-2xl sm:text-3xl font-semibold mb-4">Education</h2>
       {educationData.map((edu, index) => (
         <div

@@ -1,5 +1,11 @@
 // data.js
-import weather from '../assets/images/weather.png'
+import weather from '../assets/images/blog.png'
+import weather2 from '../assets/images/blog2.png'
+import project1 from '../assets/textures/project5.mp4'
+import project2 from '../assets/textures/project4.mp4'
+
+
+
 export const navbarData = {
     brand: {
         name: "Abhishek",
@@ -8,8 +14,9 @@ export const navbarData = {
     links: [
         { name: "Home", path: "#home" },
         { name: "About", path: "#about" },
-        { name: "Projects", path: "#projects" },
         { name: "Skills", path: "#skills" },
+        { name: "Projects", path: "#projects" },
+        { name: "Experience", path: "#experience" },
         { name: "Contact", path: "#contact" },
     ],
 };
@@ -84,13 +91,20 @@ export const projectsData = [
         description:
             "Developed a responsive weather application using React, MUI (Material-UI), and react-hot-toast, featuring real-time weather information retrieval.",
         liveLink: "https://weatherbyaps.netlify.app/",
+        skills: ['HTML', 'CSS', 'JavaScript'],
+        video: project2
+
     },
     {
-        image: weather,
+        image: weather2,
 
         title: "My Blog’s",
         description:
             "Developed a responsive blog application with features such as user authentication, post creation, and dynamic content rendering using React JS and Tailwind CSS.",
         liveLink: "https://frontend-75cg.onrender.com/",
+        skills: ['HTML', 'CSS', 'JavaScript', 'React'],
+        video: project1
     },
 ];
+
+

@@ -38,8 +38,8 @@ export default {
         'gradient-hero': 'linear-gradient(180deg, rgba(2, 21, 38, 0.9) 0%, rgba(2, 21, 38, 0.6) 100%)', // Hero section background gradient
 
         // Light mode gradients
-        'gradient-light': 'linear-gradient(135deg, #F0F4F8 0%, #FFFFFF 100%)', // Light gradient
-        'gradient-light-accent': 'linear-gradient(135deg, #FF6F61 0%, #FFA177 100%)', // Accent gradient for light mode
+        'gradient-light-accent': 'linear-gradient(135deg, #F0F4F8 0%, #FFFFFF 100%)', // Light gradient
+        'gradient-light': 'linear-gradient(135deg, #FF6F61 0%, #FFA177 100%)', // Accent gradient for light mode
 
         'gradient-light-icon':'linear-gradient(145deg, #032f63, #033876)'
       },

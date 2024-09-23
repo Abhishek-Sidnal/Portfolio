@@ -1,27 +1,25 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 
-const SkillIcon = ({ IconComponent, skillName }) => {
+const SkillIcon = ({ IconComponent, skillName, projects = false }) => {
   const skillRef = useRef(null);
 
   useEffect(() => {
-    const handleScroll = (entries) => {
+    if (!projects) return;
+
+    const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           gsap.fromTo(
             skillRef.current,
             { y: -50, opacity: 0, scale: 0.5 },
-            { y: 0, opacity: 1, scale: 1, duration: 1.5, ease: "bounce.out" }
+            { y: 0, opacity: 1, scale: 1, duration: 1, ease: "bounce.out" }
           );
         } else {
           gsap.set(skillRef.current, { opacity: 0, y: -50, scale: 0.5 });
         }
       });
-    };
-
-    const observer = new IntersectionObserver(handleScroll, {
-      threshold: 0.1,
-    });
+    }, { threshold: 0.1 });
 
     if (skillRef.current) {
       observer.observe(skillRef.current);
@@ -32,24 +30,22 @@ const SkillIcon = ({ IconComponent, skillName }) => {
         observer.unobserve(skillRef.current);
       }
     };
-  }, []);
+  }, [projects]);
+
+  const iconSizeClass = projects ? "text-xs md:text-base" : "text-4xl md:text-5xl waving-icon";
+  const textSizeClass = projects ? "text-[10px] sm:text-sm" : "text-sm sm:text-base";
+  const boxClass = projects
+    ? "w-fit p-1 sm:p-2 flex items-center gap-1 border border-dark-border"
+    : "w-28 p-2 sm:p-4 shadow-custom-light dark:shadow-custom-dark";
 
   return (
     <div
       ref={skillRef}
-      className="skill-box relative group bg-light-card dark:bg-gradient-light-icon text-light-text dark:text-dark-text p-2 sm:p-4 rounded-lg shadow-custom-light dark:shadow-custom-dark transition duration-300"
+      className={`skill-box bg-light-card dark:bg-gradient-light-icon text-light-text dark:text-dark-text rounded-lg transition duration-300 text-center ${boxClass}`}
       style={{ zIndex: 1, overflow: "visible" }}
     >
-      {/* Icon */}
-      <IconComponent className="text-4xl md:text-5xl waving-icon text-black dark:text-white hover:text-dark-accent dark:hover:text-purple-400 transition duration-300" />
-
-      {/* Tooltip (moved upwards) */}
-      <span
-        className="absolute bottom-full z-50 left-1/2 transform -translate-x-1/2 mb-2 opacity-0 group-hover:opacity-100 bg-black text-white text-xs rounded-lg px-2 py-1 transition-opacity duration-300"
-        style={{ zIndex: 100 }}
-      >
-        {skillName}
-      </span>
+      <IconComponent className={`${iconSizeClass} text-black dark:text-white hover:text-dark-accent dark:hover:text-purple-400 transition duration-300`} />
+      <p className={`font-semibold ${textSizeClass}`}>{skillName}</p>
     </div>
   );
 };

@@ -1,19 +1,14 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useRef, useContext, useEffect, useState, useMemo } from "react";
 import { FaBars, FaCode, FaTimes } from "react-icons/fa";
-import { BsSun, BsMoon } from "react-icons/bs"; // Icons for dark/light mode toggle
-import { navbarData } from "../constants/index"; // Importing the data from data.js
+import { BsSun, BsMoon } from "react-icons/bs";
+import { navbarData } from "../constants/index";
+import { ThemeContext } from "../contexts/ThemeContext"; // Import ThemeContext
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(() => {
-    return (
-      localStorage.getItem("theme") === "dark" ||
-      (!("theme" in localStorage) &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches)
-    );
-  });
-
   const sidebarRef = useRef();
+
+  const { isDarkMode, toggleDarkMode } = useContext(ThemeContext); // Use ThemeContext
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
@@ -22,16 +17,6 @@ const Navbar = () => {
       setIsOpen(false);
     }
   };
-
-  useEffect(() => {
-    if (isDarkMode) {
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-    }
-  }, [isDarkMode]);
 
   useEffect(() => {
     if (isOpen) {
@@ -45,14 +30,15 @@ const Navbar = () => {
     };
   }, [isOpen]);
 
-  const toggleDarkMode = () => setIsDarkMode(!isDarkMode);
+  // Memoized navbar links to optimize rendering
+  const navbarLinks = useMemo(() => navbarData.links, []);
 
   return (
     <header className="sticky top-0 z-50 bg-gradient-to-r from-light-bg via-gray-200 to-gray-100 dark:from-black dark:via-gray-900 dark:to-gray-800 shadow-lg">
-      <div className="flex justify-between items-center py-4 px-2 sm:px-6">
+      <div className="flex justify-between items-center py-4 px-4 sm:px-6">
         {/* Brand / Logo */}
         <a href="/" className="flex items-center text-black dark:text-white">
-          <FaCode className="text-3xl text-dark-accent" />
+          <FaCode className="text-3xl text-dark-accent" aria-label="Code Logo" />
           <span className="ml-3 text-xl font-heading font-semibold">
             {navbarData.brand.name}
           </span>
@@ -60,7 +46,7 @@ const Navbar = () => {
 
         {/* Desktop Navigation (visible on large screens) */}
         <nav className="hidden md:flex space-x-6">
-          {navbarData.links.map((link, index) => (
+          {navbarLinks.map((link, index) => (
             <a
               key={index}
               href={link.path}
@@ -70,8 +56,9 @@ const Navbar = () => {
             </a>
           ))}
           <button
-            onClick={toggleDarkMode}
+            onClick={toggleDarkMode} // Use toggleDarkMode from context
             className="text-black dark:text-white text-2xl focus:outline-none"
+            aria-label="Toggle Dark Mode"
           >
             {isDarkMode ? (
               <BsSun className="text-yellow-400" />
@@ -84,8 +71,9 @@ const Navbar = () => {
         {/* Dark Mode Toggle and Mobile Menu */}
         <div className="flex items-center space-x-4 md:hidden">
           <button
-            onClick={toggleDarkMode}
+            onClick={toggleDarkMode} // Use toggleDarkMode from context
             className="text-black dark:text-white text-2xl focus:outline-none"
+            aria-label="Toggle Dark Mode"
           >
             {isDarkMode ? (
               <BsSun className="text-yellow-400" />
@@ -98,6 +86,7 @@ const Navbar = () => {
           <button
             onClick={toggleMenu}
             className="text-black dark:text-white text-3xl"
+            aria-label={isOpen ? "Close Menu" : "Open Menu"}
           >
             {isOpen ? <FaTimes /> : <FaBars />}
           </button>
@@ -114,11 +103,12 @@ const Navbar = () => {
             <button
               onClick={toggleMenu}
               className="text-black dark:text-white text-3xl"
+              aria-label="Close Menu"
             >
               <FaTimes />
             </button>
             <nav className="flex flex-col space-y-4">
-              {navbarData.links.map((link, index) => (
+              {navbarLinks.map((link, index) => (
                 <a
                   key={index}
                   href={link.path}
