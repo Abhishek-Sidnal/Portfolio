@@ -37,7 +37,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="text-black dark:text-white lg:min-h-screen md:min-h-0 flex flex-col justify-center items-center p-5 md:p-10"
+      className="text-black dark:text-white lg:min-h-screen md:min-h-0 lg:bg-transparent md:bg-slate-200 flex flex-col justify-center items-center p-5 md:p-10"
     >
       <div
         ref={imgRef}
