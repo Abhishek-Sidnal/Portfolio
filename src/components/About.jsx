@@ -54,7 +54,7 @@ const About = () => {
   return (
     <section
       id="about"
-      className="bg-transparent text-light-text dark:text-dark-text min-h-screen flex flex-col justify-center items-center p-5 md:p-10"
+      className="bg-transparent text-light-text dark:text-dark-text  flex flex-col justify-center items-center p-5 md:p-10"
     >
       <div className="max-w-5xl mx-auto text-center mb-12">
         <h2 className="text-center text-3xl sm:text-5xl font-heading font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-red-500">
