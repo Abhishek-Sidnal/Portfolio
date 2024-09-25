@@ -112,10 +112,10 @@ const Navbar = () => {
       </div>
 
       {isOpen && (
-        <div className="fixed inset-0 flex justify-end bg-black bg-opacity-60 z-50">
+        <div className="fixed inset-0 flex justify-end bg-black bg-opacity-20 z-50">
           <div
             ref={sidebarRef}
-            className="w-64 bg-light-card dark:bg-dark-card p-4 space-y-4 shadow-dark-lg"
+            className="w-64 bg-light-border dark:bg-dark-border p-4 space-y-4 shadow-dark-lg"
           >
             <button
               onClick={toggleMenu}
