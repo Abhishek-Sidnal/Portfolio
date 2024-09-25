@@ -2,10 +2,11 @@ import React, { useRef, useContext, useEffect, useState, useMemo } from "react";
 import { FaBars, FaCode, FaTimes } from "react-icons/fa";
 import { BsSun, BsMoon } from "react-icons/bs";
 import { navbarData } from "../constants/index";
-import { ThemeContext } from "../contexts/ThemeContext"; 
+import { ThemeContext } from "../contexts/ThemeContext";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeLink, setActiveLink] = useState(0);
   const sidebarRef = useRef();
 
   const { isDarkMode, toggleDarkMode } = useContext(ThemeContext);
@@ -32,27 +33,48 @@ const Navbar = () => {
 
   const navbarLinks = useMemo(() => navbarData.links, []);
 
+  const handleLinkClick = (index) => {
+    setActiveLink(index);
+    setIsOpen(false);
+  };
+
   return (
     <header className="sticky top-0 z-50 bg-gradient-to-r from-light-bg via-gray-200 to-gray-100 dark:from-black dark:via-gray-900 dark:to-gray-800 shadow-lg">
-      <div className="flex justify-between items-center py-4 px-4 sm:px-6">
-        {/* Brand / Logo */}
+      <div className="flex justify-between items-center py-4 px-4 sm:px-6 relative">
         <a href="/" className="flex items-center text-black dark:text-white">
-          <FaCode className="text-3xl text-light-accent dark:text-dark-accent" aria-label="Code Logo" />
+          <FaCode
+            className="text-3xl text-light-accent dark:text-dark-accent"
+            aria-label="Code Logo"
+          />
           <span className="ml-3 text-xl font-heading font-semibold">
             {navbarData.brand.name}
           </span>
         </a>
 
-        <nav className="hidden md:flex space-x-6">
+        <nav className="hidden md:flex space-x-6 relative">
           {navbarLinks.map((link, index) => (
             <a
               key={index}
               href={link.path}
-              className="text-lg text-black dark:text-white hover:text-light-accent dark:hover:text-dark-accent transition duration-300"
+              className={`relative text-lg transition-all duration-700 ease-in-out ${
+                activeLink === index
+                  ? "font-bold text-light-accent dark:text-dark-accent"
+                  : "text-black dark:text-white hover:text-light-accent dark:hover:text-dark-accent"
+              }`}
+              onClick={(e) => {
+                handleLinkClick(index);
+              }}
             >
               {link.name}
+
+              <span
+                className={`absolute left-0 bottom-0 h-[2px] bg-light-accent dark:bg-dark-accent transition-all duration-700 ease-in-out ${
+                  activeLink === index ? "w-full" : "w-0"
+                }`}
+              />
             </a>
           ))}
+
           <button
             onClick={toggleDarkMode}
             className="text-black dark:text-white text-2xl focus:outline-none"
@@ -68,7 +90,7 @@ const Navbar = () => {
 
         <div className="flex items-center space-x-4 md:hidden">
           <button
-            onClick={toggleDarkMode} 
+            onClick={toggleDarkMode}
             className="text-black dark:text-white text-2xl focus:outline-none"
             aria-label="Toggle Dark Mode"
           >
@@ -107,8 +129,12 @@ const Navbar = () => {
                 <a
                   key={index}
                   href={link.path}
-                  className="text-lg text-black dark:text-white hover:text-light-accent dark:hover:text-dark-accent transition duration-300"
-                  onClick={toggleMenu}
+                  className={`text-lg transition-all duration-300 ease-in-out ${
+                    activeLink === index
+                      ? "font-bold text-light-accent dark:text-dark-accent underline"
+                      : "text-black dark:text-white hover:text-light-accent dark:hover:text-dark-accent"
+                  }`}
+                  onClick={() => handleLinkClick(index)}
                 >
                   {link.name}
                 </a>

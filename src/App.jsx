@@ -1,4 +1,5 @@
 import About from "./components/About";
+import BackgroundAnimation from "./components/Animations/BackgroundAnimation";
 import ContactUs from "./components/ContactUs";
 import Education from "./components/Education";
 import Experience from "./components/Experience";
@@ -11,8 +12,9 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 
 function App() {
   return (
-    <div className="min-h-screen bg-gradient-light-accent dark:bg-gradient-dark text-light-text dark:text-dark-text">
+    <div className="min-h-screen  text-light-text dark:text-dark-text">
       <ThemeProvider>
+        <BackgroundAnimation />
         <Navbar />
         <Hero />
         <About />

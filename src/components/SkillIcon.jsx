@@ -32,20 +32,20 @@ const SkillIcon = ({ IconComponent, skillName, projects = false }) => {
     };
   }, [projects]);
 
-  const iconSizeClass = projects ? "text-xs md:text-base" : "text-4xl md:text-5xl waving-icon";
-  const textSizeClass = projects ? "text-[10px] sm:text-sm" : "text-sm sm:text-base";
+  const iconSizeClass = projects ? "text-xs md:text-base" : "text-2xl sm:text-4xl md:text-5xl waving-icon";
+  const textSizeClass = projects ? "text-[10px] sm:text-sm" : "text-xs sm:text-base";
   const boxClass = projects
     ? "w-fit p-1 sm:p-2 flex items-center gap-1 border border-dark-border"
-    : "w-28 p-2 sm:p-4 shadow-custom-light dark:shadow-custom-dark";
+    : "w-28  p-2 sm:p-4 shadow-custom-light dark:shadow-custom-dark";
 
   return (
     <div
       ref={skillRef}
-      className={`skill-box bg-light-card dark:bg-gradient-light-icon text-light-text dark:text-dark-text rounded-lg transition duration-300 text-center ${boxClass}`}
+      className={`skill-box bg-light-card dark:bg-dark-card text-light-text dark:text-dark-text rounded-lg transition duration-300 text-center ${boxClass}`}
       style={{ zIndex: 1, overflow: "visible" }}
     >
-      <IconComponent className={`${iconSizeClass} text-black dark:text-white hover:text-light-accent dark:hover:text-purple-400 transition duration-300`} />
-      <p className={`font-semibold ${textSizeClass}`}>{skillName}</p>
+      <IconComponent className={`${iconSizeClass} text-black dark:text-white hover:text-light-accent dark:hover:text-purple-400  transition duration-300`} />
+      <p className={`font-semibold mt-1 ${textSizeClass}`}>{skillName}</p>
     </div>
   );
 };

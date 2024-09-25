@@ -1,22 +1,23 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useContext } from "react";
 import { useGLTF, useVideoTexture } from "@react-three/drei";
 import gsap from "gsap";
+import { ThemeContext } from "../contexts/ThemeContext";
 
 const Laptop = (props) => {
   const { nodes, materials } = useGLTF("assets/models/laptop1.glb");
+  const { isDarkMode } = useContext(ThemeContext);
 
   const screenRef = useRef();
   const groupRef = useRef();
 
   const screenTexture = useVideoTexture(props.texture, {
-    start: true, 
+    start: true,
     muted: true,
     loop: true,
   });
 
   useEffect(() => {
     // Check if mobile prop is false before applying animations
-    if (!props.mobile) {
       if (groupRef.current) {
         gsap.from(groupRef.current.rotation, {
           y: Math.PI / 2,
@@ -33,8 +34,7 @@ const Laptop = (props) => {
           delay: 0.5,
         });
       }
-    }
-  }, [screenTexture, props.mobile]); // Added props.mobile as dependency
+  }, [screenTexture]); 
 
   return (
     <group {...props} dispose={null} ref={groupRef}>
@@ -45,7 +45,10 @@ const Laptop = (props) => {
           geometry={nodes.Object_5.geometry}
           material={materials.Metal}
         >
-          <meshStandardMaterial attach="material" color="gray" />
+          <meshStandardMaterial
+            attach="material"
+            color={isDarkMode ? "#0778a5" : "gray"}
+          />
         </mesh>
 
         <mesh
@@ -80,8 +83,8 @@ const Laptop = (props) => {
         ></mesh>
       </group>
       <group
-        position={ props.mobile?[0.153, 0.1, -0.09]:[0.153, 0.007, -0.082]}
-        rotation={props.mobile ? [0.35, 0, 0] : [0.3, 0, 0]}
+        position={ [0.153, 0.007, -0.082]}
+        rotation={[0.3, 0, 0]}
         ref={screenRef}
       >
         <mesh
@@ -96,7 +99,12 @@ const Laptop = (props) => {
           receiveShadow
           geometry={nodes.Object_13.geometry}
           material={materials.Glass}
-        ></mesh>
+        >
+          <meshStandardMaterial
+            attach="material"
+            color={isDarkMode ? "#0778a5" : "gray"}
+          />
+        </mesh>
 
         <mesh
           castShadow
@@ -112,18 +120,29 @@ const Laptop = (props) => {
           geometry={nodes.Object_15.geometry}
           material={materials.Camera_glass}
         />
+
         <mesh
           castShadow
           receiveShadow
           geometry={nodes.Object_16.geometry}
           material={materials.Metal_logo}
-        />
+        >
+          <meshStandardMaterial
+            attach="material"
+            color={isDarkMode ? "#0778a5" : "gray"}
+          />
+        </mesh>
         <mesh
           castShadow
           receiveShadow
           geometry={nodes.Object_17.geometry}
           material={materials.Glass_logo}
-        ></mesh>
+        >
+          <meshStandardMaterial
+            attach="material"
+            color={isDarkMode ? "#0778a5" : "gray"}
+          />
+        </mesh>
       </group>
       <mesh
         castShadow

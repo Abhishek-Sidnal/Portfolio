@@ -1,15 +1,16 @@
 // data.js
-import weather from '../assets/images/blog.png'
-import weather2 from '../assets/images/blog2.png'
 import project1 from '../assets/textures/project5.mp4'
 import project2 from '../assets/textures/project4.mp4'
+import blog from '../assets/blog-solid.svg'
+import weather from '../assets/cloud-sun-rain-solid.svg'
+
 
 
 
 export const navbarData = {
     brand: {
         name: "Abhishek",
-        icon: "FaCode", 
+        icon: "FaCode",
     },
     links: [
         { name: "Home", path: "#home" },
@@ -76,7 +77,7 @@ export const skillsData = [
     { name: "JavaScript", icon: SiJavascript },
     { name: "React", icon: FaReact },
     { name: "Node.js", icon: FaNodeJs },
-    { name: "Express", icon: SiExpress }, 
+    { name: "Express", icon: SiExpress },
     { name: "MongoDB", icon: SiMongodb },
     { name: "Java", icon: FaJava },
     { name: "Git", icon: SiGit },
@@ -86,25 +87,25 @@ export const skillsData = [
 
 export const projectsData = [
     {
+        image: blog,
+
+        title: "My Blog’s",
+        description: "This full-stack blog application features user authentication, post creation, and editing capabilities. Developed using React JS, Tailwind CSS, Node.js, Express, and MongoDB, the app allows users to manage dynamic content effortlessly. Integrated with Cloudinary for image uploads and JWT-based authentication, the app ensures secure user sessions. The project focuses on providing a smooth user experience across devices, emphasizing responsive design and secure data handling in both front-end and back-end implementations."
+        , liveLink: "https://frontend-75cg.onrender.com/",
+        skills: ['HTML', 'CSS', 'JavaScript', 'React', 'Tailwind', 'Node.js', 'Express', 'MongoDB'],
+        video: project1
+    },
+    {
         image: weather,
         title: "Weather App",
-        description:
-            "Developed a responsive weather application using React, MUI (Material-UI), and react-hot-toast, featuring real-time weather information retrieval.",
+        description: "This responsive weather application was developed using React, Material-UI (MUI), and the react-hot-toast library. It allows users to retrieve real-time weather information based on location, featuring a sleek UI and error handling for seamless user experience. The app integrates the OpenWeatherMap API to fetch current weather data and provides notifications for any potential issues. The focus was on creating a user-friendly interface and reliable real-time data retrieval, ensuring a dynamic and responsive design across devices"
+        ,
         liveLink: "https://weatherbyaps.netlify.app/",
         skills: ['HTML', 'CSS', 'JavaScript'],
         video: project2
 
     },
-    {
-        image: weather2,
 
-        title: "My Blog’s",
-        description:
-            "Developed a responsive blog application with features such as user authentication, post creation, and dynamic content rendering using React JS and Tailwind CSS.",
-        liveLink: "https://frontend-75cg.onrender.com/",
-        skills: ['HTML', 'CSS', 'JavaScript', 'React'],
-        video: project1
-    },
 ];
 
-
+// : React JS, Tailwind CSS, Node.js, Express, MongoDB, Cloudinary, JWT

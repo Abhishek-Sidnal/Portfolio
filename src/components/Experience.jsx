@@ -44,14 +44,14 @@ const Experience = () => {
   return (
     <div
       id="experience"
-      className="w-full max-w-5xl mx-auto mb-6 sm:mb-10 p-5 md:p-10"
+      className="w-full mx-auto mb-6 sm:mb-10 p-5 md:p-10"
       ref={experienceRef}
     >
       <h2 className="text-2xl sm:text-3xl font-semibold mb-4">Experience</h2>
       {experienceData.map((exp, index) => (
         <div
           key={index}
-          className="bg-light-card dark:bg-dark-card p-4 sm:p-6 rounded-lg shadow-md mb-4 sm:mb-6"
+          className="bg-light-card  dark:bg-dark-card p-4 sm:p-6 rounded-lg shadow-md mb-4 sm:mb-6  "
         >
           <h3 className="font-bold text-xl">{exp.company}</h3>
           <p className="text-light-text dark:text-dark-text-secondary">

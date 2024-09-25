@@ -3,7 +3,7 @@ import { gsap } from "gsap";
 import { skillsData } from "../constants/index";
 import poo from "../assets/images/pngwing.com.png";
 import poo2 from "../assets/images/poo2.png";
-import poo3 from "../assets/images/poo3.png"; 
+import poo3 from "../assets/images/poo3.png";
 import SkillIcon from "./SkillIcon";
 
 const Skills = () => {
@@ -17,10 +17,19 @@ const Skills = () => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           const skillIcons = skillsRef.current.querySelectorAll(".skill-box");
+
           gsap.fromTo(
             skillIcons,
-            { opacity: 0, y: 50, scale: 0.8 },
-            { opacity: 1, y: 0, scale: 1, duration: 1.5, stagger: 0.2, ease: "power3.out" }
+            { opacity: 0, y: 100, rotation: -15, scale: 0.5 },
+            {
+              opacity: 1,
+              y: 0,
+              rotation: 0,
+              scale: 1,
+              duration: 1,
+              stagger: 0.15,
+              ease: "power3.out",
+            }
           );
         }
       });
@@ -56,7 +65,7 @@ const Skills = () => {
   }, [images]);
 
   return (
-    <div id='skills' className="w-full max-w-5xl mx-auto mb-6 sm:mb-10 p-5 md:p-10" ref={skillsRef}>
+    <div id='skills' className="w-full   mb-6 sm:mb-10 p-5 md:p-10" ref={skillsRef}>
       <h2 className="text-2xl sm:text-3xl font-semibold mb-4">Skills</h2>
       <div className="flex flex-col sm:flex-row items-center justify-center">
         <div className="w-full h-80 sm:w-1/3 mb-6">

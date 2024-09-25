@@ -8,8 +8,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        'dark-bg': '#021526',
-        'dark-card': '#03346E',
+        'dark-bg': '#02152673' ,
+        'dark-card': '#03336e73',
         'dark-accent': '#6EACDA',
         'dark-primary': '#023B61',
         'dark-secondary': '#24567B',
@@ -18,11 +18,11 @@ export default {
         'dark-text-secondary': '#C9D6E3',
         'dark-footer': '#03346E',
 
-        'light-bg': '#F0F4F8',
-        'light-card': '#FFFFFF',
+        'light-bg': '#f0f4f884',
+        'light-card': '#ffffff5f',
         'light-accent': '#FF6F61',
         'light-primary': '#333E50',
-        'light-text': '#2E2E2E',
+        'light-text': '#2E2E2E',   
         'light-secondary': '#5A6978',
         'light-border': '#E0E0E0',
         'light-footer': '#333E50',
@@ -30,7 +30,7 @@ export default {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-        'gradient-dark': 'linear-gradient(135deg, #03346E 0%, #021526 100%)',
+        'gradient-dark': 'linear-gradient(5deg, #03346E 0%, #021526 100%)',
         'gradient-dark-accent': 'linear-gradient(135deg, #6EACDA 0%, #24567B 100%)',
         'gradient-hero': 'linear-gradient(180deg, rgba(2, 21, 38, 0.9) 0%, rgba(2, 21, 38, 0.6) 100%)',
 
@@ -42,7 +42,7 @@ export default {
       boxShadow: {
         'dark-lg': '0 10px 15px -3px rgba(0, 18, 38, 0.7)',
         'light-lg': '0 0 10px 5px rgba(0, 0, 0, 0.1)',
-        'custom-dark': ' inset 9px 9px 18px #01152c,inset -9px -9px 18px #0553b0',
+        'custom-dark': ' inset 9px 9px 18px #01152c6d,inset -9px -9px 18px #0552b080',
         'custom-light': 'inset 9px 9px 18px #bfbfbf,inset -9px -9px 18px #ffffff',
       },
       dropShadow: {

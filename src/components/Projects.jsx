@@ -7,6 +7,8 @@ import { Canvas } from "@react-three/fiber";
 import { Environment } from "@react-three/drei";
 import CanvasLoader from "./CanvasLoader";
 import Laptop from "./Laptop";
+import Monitor from "./Monitor";
+
 import { useMediaQuery } from "react-responsive";
 
 const Projects = () => {
@@ -37,7 +39,7 @@ const Projects = () => {
 
   const displayedDescription = isExpanded
     ? currentProject.description
-    : `${currentProject.description.substring(0, 150)}...`;
+    : `${currentProject.description.substring(0, 250)}...`;
 
   useEffect(() => {
     const handleScroll = (entries) => {
@@ -80,11 +82,8 @@ const Projects = () => {
   };
 
   return (
-    <div
-      id="projects"
-      className="w-full mx-auto mt-16 p-5 md:p-10 shadow-light-lg dark:shadow-dark-lg"
-    >
-      <h2 className="text-3xl sm:text-4xl font-heading font-semibold mb-12 text-center text-dark-primary dark:text-dark-text">
+    <div id="projects" className="w-full mx-auto mt-16 p-5 md:p-10 ">
+      <h2 className="text-3xl sm:text-4xl font-heading font-semibold mb-6 text-center text-dark-primary dark:text-dark-text">
         My Projects
       </h2>
 
@@ -92,9 +91,9 @@ const Projects = () => {
         {/* Project details */}
         <div className="flex-1 flex flex-col gap-3 lg:gap-3 w-full md:w-1/2 p-3 lg:p-6 text-light-primary dark:text-dark-text">
           <div className="flex items-center gap-4">
-            <div className="p-2 backdrop-blur-md w-fit rounded-lg bg-gradient-dark-accent dark:bg-gradient-light-accent shadow-custom-light dark:shadow-custom-dark">
+            <div className="p-2 backdrop-blur-md w-fit rounded-lg bg-light-bg dark:bg-dark-bg shadow-light-lg dark:shadow-dark-lg">
               <img
-                className="w-8 h-8 shadow-md rounded-full"
+                className="w-8 h-8 shadow-md rounded"
                 src={currentProject.image}
                 alt="logo"
               />
@@ -104,7 +103,7 @@ const Projects = () => {
             </h3>
           </div>
 
-          <p className="text-sm sm:text-base lg:text-lg leading-relaxed">
+          <p className="text-sm sm:text-base lg:text-lg leading-relaxed text-justify ">
             {displayedDescription}
             {isLongDescription && (
               <button
@@ -178,25 +177,35 @@ const Projects = () => {
             />
 
             <Suspense fallback={<CanvasLoader />}>
-              <Laptop
-                // scale={12}
-                scale={isSmall ? 22 : isTablet ? 14 : 12}
-                screenImage={currentProject.image}
-                // position={[0, -1.0, -0.3]}
-                position={
-                  isSmall
-                    ? [0, -4, -0.1]
-                    : isTablet
-                    ? [0, -2.8, -1.8]
-                    : [0, -1.9, -0.8]
-                }
-                // position={ [0, -1.8, -0.8]}
+              {isSmall ? (
+                <Monitor
+                  scale={0.319}
+                  screenImage={currentProject.image}
+                  position={[0.04, -0.75, 0]}
+                  rotation={ [-0.54, 0.0, 0]}
+                  texture={currentProject.video}
+                />
+              ) : (
+                <Laptop
+                  // scale={12}
+                  scale={ isTablet ? 14 : 12}
+                  screenImage={currentProject.image}
+                  // position={[0, -1.0, -0.3]}
+                  position={
+                    isSmall
+                      ? [0, -4, -0.1]
+                      : isTablet
+                      ? [0, -2.8, -1.8]
+                      : [0, -1.9, -0.8]
+                  }
+                  // position={ [0, -1.8, -0.8]}
 
-                // rotation={[-0.63, 0.0, 0]}
-                rotation={isTablet?[-0.6, 0.0, 0]:[-0.6, 0.0, 0]}
-                texture={currentProject.video}
-                mobile={isSmall}
-              />
+                  // rotation={[-0.63, 0.0, 0]}
+                  rotation={isTablet ? [-0.6, 0.0, 0] : [-0.6, 0.0, 0]}
+                  texture={currentProject.video}
+                  mobile={isSmall}
+                />
+              )}
             </Suspense>
 
             <Environment preset="studio" />
