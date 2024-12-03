@@ -13,7 +13,7 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 function App() {
   return (
     <div className="min-h-screen  text-light-text dark:text-dark-text">
-      <ThemeProvider>
+      <ThemeProvider> 
         <BackgroundAnimation />
         <Navbar />
         <Hero />
