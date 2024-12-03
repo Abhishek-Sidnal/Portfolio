@@ -7,6 +7,7 @@ import {
 } from "react-icons/ai";
 import contact from "../assets/images/contact.png";
 import toast, { Toaster } from "react-hot-toast";
+import { PiPhoneCallFill } from "react-icons/pi";
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
@@ -60,7 +61,7 @@ const ContactUs = () => {
         .then(() => {
           setSubmitted(true);
           setLoading(false);
-          setFormData({ name: "", email: "", message: "" }); 
+          setFormData({ name: "", email: "", message: "" });
         })
         .catch((error) => {
           console.error("Email sending error:", error);
@@ -80,19 +81,24 @@ const ContactUs = () => {
       id="contact"
       className="p-5 md:p-10 transition-colors duration-300"
     >
-      <div className="max-w-7xl mx-auto md:px-4 lg:px-6 ">
-        <h2 className="text-center text-3xl font-heading font-bold text-light-primary dark:text-dark-text mb-12">
+      <div className=" mx-auto">
+        <h2 className="text-center text-3xl font-heading font-bold text-light-primary dark:text-dark-text mb-6 sm:mb-12">
           Get in Touch
         </h2>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 items-center">
           <div className="text-light-primary dark:text-dark-text">
-            <h3 className="text-2xl font-semibold mb-4">Let's Talk</h3>
-            <div className="mb-6">
+            <h3 className="text-2xl font-semibold mb-4 ">
+              <a href="tel:+919900833051">
+                Let's Talk
+                <PiPhoneCallFill className="inline ml-1 -mt-1" />
+              </a>
+            </h3>
+            <div className="mb-6 rounded-4xl shadow-custom-light dark:shadow-custom-dark">
               <img
                 src={contact}
                 alt="Contact"
-                className="rounded-4xl shadow-custom-light dark:shadow-custom-dark"
+                className=" sm:w-fit sm:h-80 lg:w-full lg:h-full mx-auto "
               />
             </div>
             <p className="text-light-secondary dark:text-dark-text-secondary mb-6">
@@ -119,7 +125,7 @@ const ContactUs = () => {
             {!loading && !submitted && (
               <form
                 onSubmit={handleSubmit}
-                className="space-y-6 p-5 lg:p-8 bg-light-card dark:bg-dark-card shadow-light-lg dark:shadow-dark-lg rounded-xl sm:rounded-2xl lg:rounded-4xl"
+                className="space-y-6 p-5 lg:p-8 bg-light-card dark:bg-dark-card shadow-light-lg dark:shadow-dark-lg rounded-xl sm:rounded-2xl lg:rounded-4xl mb-4 sm:mb-auto "
               >
                 <div>
                   <label

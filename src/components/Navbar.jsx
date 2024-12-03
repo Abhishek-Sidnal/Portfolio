@@ -43,10 +43,10 @@ const Navbar = () => {
       <div className="flex justify-between items-center py-4 px-4 sm:px-6 relative">
         <a href="/" className="flex items-center text-black dark:text-white">
           <FaCode
-            className="text-3xl text-light-accent dark:text-dark-accent"
+            className="text-2xl sm:text-xl text-light-accent dark:text-dark-accent"
             aria-label="Code Logo"
           />
-          <span className="ml-3 text-xl font-heading font-semibold">
+          <span className="ml-1 text-lg sm:text-xl font-heading font-semibold">
             {navbarData.brand.name}
           </span>
         </a>
@@ -77,7 +77,7 @@ const Navbar = () => {
 
           <button
             onClick={toggleDarkMode}
-            className="text-black dark:text-white text-2xl focus:outline-none"
+            className="text-black dark:text-white text-xl focus:outline-none"
             aria-label="Toggle Dark Mode"
           >
             {isDarkMode ? (
@@ -91,22 +91,22 @@ const Navbar = () => {
         <div className="flex items-center space-x-4 md:hidden">
           <button
             onClick={toggleDarkMode}
-            className="text-black dark:text-white text-2xl focus:outline-none"
+            className="text-black dark:text-white  focus:outline-none"
             aria-label="Toggle Dark Mode"
           >
             {isDarkMode ? (
-              <BsSun className="text-yellow-400" />
+              <BsSun className="text-yellow-400 text-xl " />
             ) : (
-              <BsMoon className="text-gray-400" />
+              <BsMoon className="text-gray-400 text-xl" />
             )}
           </button>
 
           <button
             onClick={toggleMenu}
-            className="text-black dark:text-white text-3xl"
+            className="text-black dark:text-white text-xl"
             aria-label={isOpen ? "Close Menu" : "Open Menu"}
           >
-            {isOpen ? <FaTimes /> : <FaBars />}
+            {isOpen ? <FaTimes  /> : <FaBars />}
           </button>
         </div>
       </div>
@@ -119,10 +119,10 @@ const Navbar = () => {
           >
             <button
               onClick={toggleMenu}
-              className="text-black dark:text-white text-3xl"
+              className="text-black dark:text-white text-2xl "
               aria-label="Close Menu"
             >
-              <FaTimes />
+              <FaTimes className="font-medium" />
             </button>
             <nav className="flex flex-col space-y-4">
               {navbarLinks.map((link, index) => (

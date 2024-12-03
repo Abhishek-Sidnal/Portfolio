@@ -3,6 +3,7 @@ import { gsap } from "gsap";
 import dev2 from "../assets/images/MERN_light.jpg";
 import dev from "../assets/images/MERN_Dark.jpg";
 import { ThemeContext } from "../contexts/ThemeContext";
+import { MdWavingHand } from "react-icons/md";
 
 const Hero = () => {
   const titleRef = useRef(null);
@@ -41,7 +42,7 @@ const Hero = () => {
     >
       <div
         ref={imgRef}
-        className="h-72 w-72 drop-shadow-2xl overflow-hidden relative mb-8 c-border"
+        className="sm:h-72 h-64 sm:w-72 w-64   drop-shadow-2xl overflow-hidden relative mb-8 c-border"
       >
         <img
           src={isDarkMode ? dev : dev2}
@@ -53,16 +54,16 @@ const Hero = () => {
       <div className="sm:text-center">
         <h1
           ref={titleRef}
-          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-heading font-extrabold"
+          className="text-xl sm:text-3xl md:text-3xl lg:text-4xl font-heading font-extrabold text-dark-primary dark:text-light-border"
         >
-          Abhishek |{" "}
-          <span className="block sm:inline whitespace-nowrap text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-red-500">
+          Hi, I'm Abhishek P S <MdWavingHand className="inline waving-hand " />
+          <span className="block  text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-500 to-red-500">
             MERN-Stack Developer
           </span>
         </h1>
         <p
           ref={summaryRef}
-          className="mt-6 text-lg sm:text-xl text-light-text dark:text-dark-text-secondary max-w-4xl mx-auto"
+          className="mt-2 sm:mt-6 text-base sm:text-lg md:text-xl text-light-text dark:text-dark-text-secondary max-w-4xl mx-auto"
         >
           I am a MERN Stack Developer from Bangalore, Karnataka, India, with
           hands-on experience in building responsive and dynamic applications.

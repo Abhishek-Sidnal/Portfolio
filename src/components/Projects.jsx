@@ -82,16 +82,16 @@ const Projects = () => {
   };
 
   return (
-    <div id="projects" className="w-full mx-auto mt-16 p-5 md:p-10 ">
-      <h2 className="text-3xl sm:text-4xl font-heading font-semibold mb-6 text-center text-dark-primary dark:text-dark-text">
+    <div id="projects" className="w-full mx-auto  p-5 md:p-10 ">
+      <h2 className="text-center text-3xl sm:text-5xl font-heading font-extrabold mb-4 sm:mb-8 md:mb-12 text-dark-primary dark:text-dark-text">
         My Projects
       </h2>
 
-      <div className="flex flex-col md:flex-row items-center">
+      <div className="flex flex-col md:flex-row items-center gap-6 sm:gap-3">
         {/* Project details */}
-        <div className="flex-1 flex flex-col gap-3 lg:gap-3 w-full md:w-1/2 p-3 lg:p-6 text-light-primary dark:text-dark-text">
+        <div className="flex-1 flex flex-col gap-3 lg:gap-3 w-full md:w-1/2  text-light-primary dark:text-dark-text">
           <div className="flex items-center gap-4">
-            <div className="p-2 backdrop-blur-md w-fit rounded-lg bg-light-bg dark:bg-dark-bg shadow-light-lg dark:shadow-dark-lg">
+            <div className="p-2 backdrop-blur-md w-fit rounded-lg bg-light-bg dark:bg-dark-primary shadow-light-lg dark:shadow-dark-lg">
               <img
                 className="w-8 h-8 shadow-md rounded"
                 src={currentProject.image}
@@ -159,7 +159,7 @@ const Projects = () => {
         </div>
 
         {/* 3D Model */}
-        <div className="w-full md:h-128 h-64   md:w-1/2 flex items-center justify-center lg:justify-end">
+        <div className="w-full md:h-128 h-64 md:w-1/2 flex items-center justify-center lg:justify-end ">
           <Canvas shadows camera={{ position: [0, 1.5, 2.5], fov: 50 }}>
             <ambientLight intensity={0} />
             <directionalLight
@@ -179,11 +179,11 @@ const Projects = () => {
             <Suspense fallback={<CanvasLoader />}>
               {isSmall ? (
                 <Monitor
-                  scale={0.319}
+                  scale={0.29}
                   screenImage={currentProject.image}
                   position={[0.04, -0.75, 0]}
                   rotation={ [-0.54, 0.0, 0]}
-                  texture={currentProject.video}
+                  texture={currentProject.fvideo}
                 />
               ) : (
                 <Laptop

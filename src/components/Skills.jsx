@@ -65,8 +65,8 @@ const Skills = () => {
   }, [images]);
 
   return (
-    <div id='skills' className="w-full   mb-6 sm:mb-10 p-5 md:p-10" ref={skillsRef}>
-      <h2 className="text-2xl sm:text-3xl font-semibold mb-4">Skills</h2>
+    <div id='skills' className="w-full   p-5 md:p-10" ref={skillsRef}>
+      <h2 className="text-center text-3xl sm:text-5xl font-heading font-extrabold mb-4 sm:mb-8 md:mb-12 text-dark-primary dark:text-dark-text">Skills</h2>
       <div className="flex flex-col sm:flex-row items-center justify-center">
         <div className="w-full h-80 sm:w-1/3 mb-6">
           <img

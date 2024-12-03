@@ -56,8 +56,8 @@ const About = () => {
       id="about"
       className="bg-transparent text-light-text dark:text-dark-text  flex flex-col justify-center items-center p-5 md:p-10"
     >
-      <div className="max-w-5xl mx-auto text-center mb-12">
-        <h2 className="text-center text-3xl sm:text-5xl font-heading font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-red-500">
+      <div className="max-w-5xl mx-auto ">
+        <h2 className="text-center text-3xl sm:text-5xl font-heading font-extrabold  text-dark-primary dark:text-dark-text">
           About Me
         </h2>
         <div className="flex flex-col sm:flex-row items-center justify-center mt-10">
@@ -73,7 +73,7 @@ const About = () => {
           </div>
 
           <div className="w-full sm:w-1/2 sm:ml-10 mt-6 sm:mt-0 text-left">
-            <p className="text-lg sm:text-xl leading-relaxed text-light-text dark:text-dark-text-secondary">
+            <p className="text-base sm:text-lg md:text-xl leading-relaxed text-light-text dark:text-dark-text-secondary">
               {aboutData.summary}
             </p>
             <div

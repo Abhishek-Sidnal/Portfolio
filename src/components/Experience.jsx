@@ -44,7 +44,7 @@ const Experience = () => {
   return (
     <div
       id="experience"
-      className="w-full mx-auto mb-6 sm:mb-10 p-5 md:p-10"
+      className="w-full mx-auto  p-5 md:p-10"
       ref={experienceRef}
     >
       <h2 className="text-2xl sm:text-3xl font-semibold mb-4">Experience</h2>
@@ -53,11 +53,11 @@ const Experience = () => {
           key={index}
           className="bg-light-card  dark:bg-dark-card p-4 sm:p-6 rounded-lg shadow-md mb-4 sm:mb-6  "
         >
-          <h3 className="font-bold text-xl">{exp.company}</h3>
-          <p className="text-light-text dark:text-dark-text-secondary">
+          <h3 className="font-bold text-lg sm:text-xl">{exp.company}</h3>
+          <p className="text-light-text dark:text-dark-text-secondary text-sm sm:text-base md:text-lg ">
             {exp.duration}
           </p>
-          <ul className="list-disc mt-4 ml-4 sm:ml-6 text-light-text dark:text-dark-text-secondary">
+          <ul className="list-disc mt-4 ml-4 sm:ml-6 text-light-text dark:text-dark-text-secondary text-base sm:text-lg md:text-xl">
             {exp.responsibilities.map((responsibility, i) => (
               <li key={i}>{responsibility}</li>
             ))}

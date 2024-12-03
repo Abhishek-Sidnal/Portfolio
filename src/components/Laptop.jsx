@@ -15,6 +15,8 @@ const Laptop = (props) => {
     muted: true,
     loop: true,
   });
+  screenTexture.center.set(0.5, 0.5); 
+  screenTexture.rotation = Math.PI ;
 
   useEffect(() => {
     // Check if mobile prop is false before applying animations
